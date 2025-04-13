@@ -1,29 +1,32 @@
 {
-	"name": "workers-ai-provider",
-	"description": "Workers AI Provider for the vercel AI SDK",
-	"type": "module",
-	"version": "0.3.0",
-	"main": "dist/index.js",
-	"types": "dist/index.d.ts",
-	"repository": {
-		"type": "git",
-		"url": "git://github.com/cloudflare/ai.git"
-	},
-	"bugs": {
-		"url": "https://github.com/cloudflare/ai/issues"
-	},
-	"authors": "Sunil Pai <spai@cloudflare.com>",
-	"license": "MIT",
-	"scripts": {
-		"build": "rm -rf dist && tsup src/index.ts --dts --sourcemap --format esm --target es2020",
-		"format": "biome format --write",
-		"test:ci": "vitest --watch=false",
-		"test": "vitest"
-	},
-	"files": ["dist", "src", "README.md", "package.json"],
-	"keywords": ["workers", "cloudflare", "ai", "vercel", "sdk", "provider", "chat", "serverless"],
-	"dependencies": {
-		"@cloudflare/workers-types": "^4.20250313.0",
-		"@ai-sdk/provider": "^1.1.2"
-	}
+    "name": "workers-ai-provider",
+    "description": "Workers AI Provider for the vercel AI SDK",
+    "type": "module",
+    "version": "0.3.0",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/cloudflare/ai.git"
+    },
+    "bugs": {
+        "url": "https://github.com/cloudflare/ai/issues"
+    },
+    "authors": "Sunil Pai <spai@cloudflare.com>",
+    "license": "MIT",
+    "scripts": {
+        "build": "rimraf dist && tsup src/index.ts --dts --sourcemap --format esm --target es2020",
+        "format": "biome format --write",
+        "test:ci": "vitest --watch=false",
+        "test": "vitest"
+    },
+    "files": ["dist", "src", "README.md", "package.json"],
+    "keywords": ["workers", "cloudflare", "ai", "vercel", "sdk", "provider", "chat", "serverless"],
+    "dependencies": {
+        "@cloudflare/workers-types": "^4.20250313.0",
+        "@ai-sdk/provider": "^1.1.2",
+    },
+   "devDependencies": {
+        "rimraf": "^5.0.5"
+    }
 }
