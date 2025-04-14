@@ -90,7 +90,9 @@ export class MyMCP extends McpAgent<Props, Env> {
 
 export default new OAuthProvider({
 	apiRoute: "/sse",
+    //@ts-ignore
 	apiHandler: MyMCP.mount("/sse"),
+    //@ts-ignore
 	defaultHandler: GitHubHandler,
 	authorizeEndpoint: "/authorize",
 	tokenEndpoint: "/token",
