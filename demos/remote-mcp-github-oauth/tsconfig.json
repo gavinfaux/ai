@@ -14,7 +14,7 @@
 		/* Specify how TypeScript looks up a file from a given module specifier. */
 		"moduleResolution": "node",
 		/* Specify type package names to be included without being referenced in a source file. */
-        "types": ["@cloudflare/workers-types/experimental"],
+		"types": ["@cloudflare/workers-types/experimental"],
 		/* Enable importing .json files */
 		"resolveJsonModule": true,
 
@@ -39,10 +39,10 @@
 		/* Skip type checking all .d.ts files. */
 		"skipLibCheck": true,
 
-        /* Add paths for module resolution */
-        "baseUrl": ".",
-        "paths": {
-            "agents/mcp": ["node_modules/agents/dist/mcp.d.ts"]
-        }
+		/* Add paths for module resolution */
+		"baseUrl": ".",
+		"paths": {
+			"agents/mcp": ["node_modules/agents/dist/mcp.d.ts"]
+		}
 	}
 }
