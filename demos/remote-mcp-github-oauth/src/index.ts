@@ -8,18 +8,20 @@ import type { Env } from "../worker-configuration";
 import type { Props } from "./utils";
 
 
-const ALLOWED_USERNAMES = new Set([
-	// Add GitHub usernames of users who should have access to the image generation tool
-	// For example: 'yourusername', 'coworkerusername'
-]);
-
 export class MyMCP extends McpAgent<Env, Props> {
 	server = new McpServer({
 		name: "Github OAuth Proxy Demo",
 		version: "1.0.0",
 	});
-
 	async init() {
+        const ALLOWED_USERNAMES: Set<string> = new Set(
+            // Add GitHub usernames of users who should have access to the image generation tool
+            // For example: 'yourusername', 'coworkerusername'
+            (this.env.ALLOWED_USERNAMES || "")
+            .split(',')
+            .map(username => username.trim())
+            .filter(username => username !== "")
+        );
 		// Hello, world!
 		this.server.tool(
 			"add",
@@ -48,7 +50,7 @@ export class MyMCP extends McpAgent<Env, Props> {
 			},
 		);
 
-        if (ALLOWED_USERNAMES.has(this.props.login as string)) {
+        if (typeof this.props.login === 'string' && ALLOWED_USERNAMES.has(this.props.login)) {
 		// Dynamically add tools based on the user's login. In this case, I want to limit
 		// access to my Image Generation tool to just me
 
