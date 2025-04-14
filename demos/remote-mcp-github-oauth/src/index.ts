@@ -4,15 +4,9 @@ import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { z } from "zod";
 import { Octokit } from "octokit";
 import { GitHubHandler } from "./github-handler";
+import type { Env } from "../worker-configuration";
+import type { Props } from "./utils";
 
-// Context from the auth process, encrypted & stored in the auth token
-// and provided to the DurableMCP as this.props
-type Props = {
-	login: string;
-	name: string;
-	email: string;
-	accessToken: string;
-};
 
 const ALLOWED_USERNAMES = new Set([
 	// Add GitHub usernames of users who should have access to the image generation tool
