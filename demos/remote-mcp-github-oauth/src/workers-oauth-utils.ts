@@ -84,7 +84,7 @@ async function verifySignature(key: CryptoKey, signatureHex: string, data: strin
   const enc = new TextEncoder()
   try {
     // Convert hex signature back to ArrayBuffer
-    const signatureBytes = new Uint8Array(signatureHex.match(/.{1,2}/g)!.map((byte) => parseInt(byte, 16)))
+    const signatureBytes = new Uint8Array(signatureHex.match(/.{1,2}/g)!.map((byte) => Number.parseInt(byte, 16)))
     return await crypto.subtle.verify('HMAC', key, signatureBytes.buffer, enc.encode(data))
   } catch (e) {
     // Handle errors during hex parsing or verification
