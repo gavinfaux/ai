@@ -13,7 +13,7 @@ const ALLOWED_USERNAMES = new Set([
 	// For example: 'yourusername', 'coworkerusername'
 ]);
 
-export class MyMCP extends McpAgent<Props, Env> {
+export class MyMCP extends McpAgent<Env, Props> {
 	server = new McpServer({
 		name: "Github OAuth Proxy Demo",
 		version: "1.0.0",
