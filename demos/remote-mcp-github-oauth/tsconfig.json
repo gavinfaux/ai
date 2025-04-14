@@ -37,6 +37,12 @@
 		"strict": true,
 
 		/* Skip type checking all .d.ts files. */
-		"skipLibCheck": true
+		"skipLibCheck": true,
+
+        /* Add paths for module resolution */
+        "baseUrl": ".",
+        "paths": {
+            "agents/mcp": ["node_modules/agents/dist/mcp.d.ts"]
+        }
 	}
 }
