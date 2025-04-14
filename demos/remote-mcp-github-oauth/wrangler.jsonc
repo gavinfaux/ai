@@ -27,7 +27,8 @@
 	"kv_namespaces": [
 		{
 			"binding": "OAUTH_KV",
-			"id": "<Add-KV-ID>"
+            "id": "<Add-KV-ID>",
+			"preview_id": "<Add-KV-preview-ID>"
 		}
 	],
 	"ai": {
@@ -38,5 +39,8 @@
 	},
 	"dev": {
 		"port": 8788
-	}
+    },
+    "vars": {
+        "ALLOWED_USERNAMES": "<Add-ALLOWED_USERNAMES_comma_separated>"
+    }
 }
